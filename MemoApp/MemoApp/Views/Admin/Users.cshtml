@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CreateUserViewModel>
+@{
+    ViewData["Title"] = "Users";
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr class="header">
+            <th>@Html.DisplayNameFor(Model => Model.Id)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Email)</th>
+            <th>@Html.DisplayNameFor(Model => Model.IdentityRoleName)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var userViewModel in Model)
+        {
+            <tr>
+                <td>@userViewModel.Id</td>
+                <td>@userViewModel.Email</td>
+                <td>@userViewModel.IdentityRoleName</td>
+                <td>
+                    <a class="btn btn-success" asp-action="ChangeUserRole" asp-route-userId="@userViewModel.Id">Change Role</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

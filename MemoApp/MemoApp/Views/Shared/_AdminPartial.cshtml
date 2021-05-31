@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+            Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" asp-controller="Admin" asp-action="Roles">Roles</a>
+            <a class="dropdown-item" asp-controller="Admin" asp-action="Users">Users</a>
+        </div>
+    </li>
+}

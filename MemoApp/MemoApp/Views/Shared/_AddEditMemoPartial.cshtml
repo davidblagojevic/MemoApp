@@ -1,0 +1,47 @@
+﻿@model MemoViewModel
+<!--Add - edit modal-->
+<div class="modal fade" id="addModalScrollable" tabindex="-1" role="dialog" aria-labelledby="addModalScrollableTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addEditModalScrollableTitle">Add Memo</h5>
+                <button type="button" class="close addModalClose" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post">
+                <div class="modal-body">
+                    <input type="hidden" asp-for="Id" id="idInput" />
+                    <div class="form-group">
+                        <label asp-for="Title">Title</label>
+                        <input type="text" class="form-control" id="titleInput" asp-for="Title" placeholder="Memo Title" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Note">Note</label>
+                        <textarea type="text" asp-for="Note" id="noteTextArea" class="form-control" placeholder="Memo Note" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+
+                        <label asp-for="TagList">Tag</label>
+                        @if (Model.TagList != null)
+                        {
+
+                            <input type="text" asp-for="TagList" id="tagInput" class="form-control" value="@string.Join(" ", Model.TagList)" placeholder="Memo Tag" />
+                        }
+                        else
+                        {
+                            <input type="text" asp-for="TagList" id="tagInput" class="form-control" placeholder="Memo Tag" />
+
+                        }
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary addModalClose">Cancel</button>
+                    @*<button type="submit" id="doEditMemo" class="btn btn-primary">Edit</button>*@
+                    <button type="submit" id="doAddMemo" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

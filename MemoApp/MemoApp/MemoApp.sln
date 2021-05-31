@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoApp", "MemoApp.csproj", "{19AF3F7C-F474-48E3-8D6F-E1EDC4293CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationGlobalization", "..\LocalizationGlobalization\LocalizationGlobalization.csproj", "{DD24A43F-0BDA-4804-A815-F9F7D6194A7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19AF3F7C-F474-48E3-8D6F-E1EDC4293CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19AF3F7C-F474-48E3-8D6F-E1EDC4293CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19AF3F7C-F474-48E3-8D6F-E1EDC4293CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19AF3F7C-F474-48E3-8D6F-E1EDC4293CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD24A43F-0BDA-4804-A815-F9F7D6194A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD24A43F-0BDA-4804-A815-F9F7D6194A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD24A43F-0BDA-4804-A815-F9F7D6194A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD24A43F-0BDA-4804-A815-F9F7D6194A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EADD7623-4BD5-4154-B8CF-8A4A4A6FAE0D}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+﻿@model UserRoleViewModel
+@{
+    ViewData["Title"] = "Change user role";
+}
+<h1>Change </h1>
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+            <div class="form-group">
+                @Html.LabelFor(x => Model.RoleName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(x => x.RoleName, new SelectList(Model.SelectRoleName, "Value", "Text"), htmlAttributes: new { @class = "form-control", @id = "Role" })
+                    @Html.ValidationMessageFor(x => x.RoleName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <button style="width:auto;" type="submit" class="btn btn-primary">Change role</button>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web
+
+
+@*@model IEnumerable<Memo> umesto ovoga ide paged list koji ce da radi paginaciju*@
+@model IEnumerable<MemoViewModel>
+@{
+    ViewData["Title"] = "Memo";
+}
+@inject IViewLocalizer Localizer;
+<div class="row mb-3">
+    <div class="col-12">
+        <button class="btn btn-dark" id="add" onclick="addMemo()">@Localizer["Create"]</button>
+    </div>
+</div>
+
+<table class="table" id="tableGrid">
+    <thead class="thead-dark">
+        <tr class="header">
+            <th>@Localizer[@Html.DisplayNameFor(Model => Model.Id)]</th>
+            <th>@Localizer[@Html.DisplayNameFor(Model => Model.Title)]</th>
+            <th>@Localizer[@Html.DisplayNameFor(Model => Model.Note)]</th>
+            <th>@Localizer[@Html.DisplayNameFor(Model => Model.CreatedAt)]</th>
+            <th>@Localizer[@Html.DisplayNameFor(Model => Model.Status)]</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var memo in Model)
+        {
+        <tr class=@(memo.Status == StatusEnum.Active ? "" : "disableTableRow")>
+            <td>@memo.Id</td>
+            <td>@memo.Title</td>
+            <td>@memo.Note</td>
+            <td>@memo.CreatedAt</td>
+            <td>@memo.Status</td>
+            <td>
+                <button class="btn btn-sm btn-success edit" onclick="editMemo(@memo.Id)"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-sm btn-dark details"><i class="fas fa-expand-alt"></i></button>
+                <button class="btn btn-sm btn-danger delete" onclick="deleteMemo(@memo.Id, '@memo.Title')"><i class="fas fa-trash"></i></button>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+<div id="memoModal">
+
+</div>
+@*pitaj zasto ovo ne radi/
+    <div>
+        @foreach (var memo in Model)
+        {
+            @memo.AspNetUsers.Email;
+        }
+    </div>*@
+
+
+@section Scripts{
+    <script src="~/js/memoIndex.js"></script>
+    @*<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>*@
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+
+
+
+}
+@section Headers{
+    <link rel="stylesheet" href="~/css/memoIndex.css" />
+    <link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap4.css" />
+    @*<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">*@
+}

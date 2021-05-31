@@ -1,0 +1,7 @@
+﻿.displayNoneTableCell{
+    display:none;
+}
+.disableTableRow {
+    pointer-events:none; 
+    background-color:grey;
+}
